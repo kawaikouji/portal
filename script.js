@@ -14,26 +14,20 @@ const initialMessage = document.getElementById('initial-message');
  * @param {string} gameId - 各ゲームのGitHubリポジトリ名 (例: 'game-mahjong')
  */
 function loadGame(gameId) {
-    // 各ゲームは独立したリポジトリ（別々のGitHub Pages URL）でホスティングされていると仮定
-    // 例: game-mahjong が https://your-github-username.github.io/game-mahjong/ にある
-    const gameUrl = `https://${GITHUB_USERNAME}.github.io/${gameId}/`;
+    // 統合サイトのリポジトリ内の相対パスを使用
+    // 例: 'janken' -> 'games/janken/build/web/'
+    const gameUrl = `games/${gameId}/build/web/`;
 
     // 1. iframeにURLを設定してゲームを読み込む
     iframe.src = gameUrl;
 
-    // 2. 初期メッセージを非表示にし、iframeを表示する
-    // iframeの`src`が空でない場合にのみ実行されるべきです
+    // ... (その他の表示・非表示ロジックは前回通り)
     if (iframe.style.display === 'none') {
         iframe.style.display = 'block';
     }
     if (initialMessage.style.display !== 'none') {
         initialMessage.style.display = 'none';
     }
-
-    // 3. (オプション) 読み込み完了時の処理
-    // iframe.onload = function() {
-    //     console.log(`${gameId} の読み込みが完了しました。`);
-    // };
 }
 
 // グローバルスコープに関数を公開 (HTMLのonclick属性で利用するため)
