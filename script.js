@@ -15,8 +15,8 @@ const initialMessage = document.getElementById('initial-message');
  */
 function loadGame(gameId) {
     // 統合サイトのリポジトリ内の相対パスを使用
-    // 例: 'janken' -> 'games/janken/build/web/'
-    const gameUrl = `games/${gameId}/build/web/`;
+    // 例: 'janken' -> 'games/janken/web/'
+    const gameUrl = `games/${gameId}/web/`;
 
     // 1. iframeにURLを設定してゲームを読み込む
     iframe.src = gameUrl;
