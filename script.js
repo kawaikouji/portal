@@ -9,7 +9,7 @@ const BASE_REPOSITORY_NAME = 'portal'; // この統合サイトのリポジト�
 // ゲームごとの設定を管理するオブジェクト
 // 'default' は、個別の設定がないゲームに適用される
 const GAME_CONFIG = {
-    'janken': { width: '400px', height: '600px' }, // 例: じゃんけんゲームは縦長
+    'janken': { width: '720px', height: '1280px' }, // 例: じゃんけんゲームは縦長
     'game-puzzle': { width: '800px', height: '600px' }, // 例: パズルゲームは横長
     'default': { width: '100%', height: '100%' } // デフォルトはコンテナに合わせる
 };
