@@ -6,6 +6,14 @@
 const GITHUB_USERNAME = 'kawaikouji'; // 実際のGitHubユーザー名
 const BASE_REPOSITORY_NAME = 'portal'; // この統合サイトのリポジトリ名
 
+// ゲームごとの設定を管理するオブジェクト
+// 'default' は、個別の設定がないゲームに適用される
+const GAME_CONFIG = {
+    'janken': { width: '400px', height: '600px' }, // 例: じゃんけんゲームは縦長
+    'game-puzzle': { width: '800px', height: '600px' }, // 例: パズルゲームは横長
+    'default': { width: '100%', height: '100%' } // デフォルトはコンテナに合わせる
+};
+
 const iframe = document.getElementById('game-container-iframe');
 const initialMessage = document.getElementById('initial-message');
 
@@ -14,14 +22,20 @@ const initialMessage = document.getElementById('initial-message');
  * @param {string} gameId - 各ゲームのGitHubリポジトリ名 (例: 'game-mahjong')
  */
 function loadGame(gameId) {
-    // 統合サイトのリポジトリ内の相対パスを使用
-    // 例: 'janken' -> 'games/janken/web/'
+    // 1. ゲーム設定を取得（存在しない場合はデフォルト設定を利用）
+    const config = GAME_CONFIG[gameId] || GAME_CONFIG['default'];
+
+    // 2. iframeのサイズを更新
+    iframe.style.width = config.width;
+    iframe.style.height = config.height;
+
+    // 3. 統合サイトのリポジトリ内の相対パスを使用してURLを構築
     const gameUrl = `games/${gameId}/web/`;
 
-    // 1. iframeにURLを設定してゲームを読み込む
+    // 4. iframeにURLを設定してゲームを読み込む
     iframe.src = gameUrl;
 
-    // ... (その他の表示・非表示ロジックは前回通り)
+    // 5. iframeと初期メッセージの表示を切り替える
     if (iframe.style.display === 'none') {
         iframe.style.display = 'block';
     }
