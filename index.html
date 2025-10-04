@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flutter Game Portal</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>🎮 Flutter Web Game Portal</h1>
+    </header>
+
+    <div id="container">
+        <nav id="game-list">
+            <h2>ゲーム一覧</h2>
+            <button onclick="loadGame('janken')">じゃんけんゲーム (Flutter)</button>
+            <button onclick="loadGame('game-puzzle')">パズルゲーム (Flutter)</button>
+            <button onclick="loadGame('game-rpg')">RPG (Flutter)</button>
+            <p class="guide">上のボタンをクリックしてゲームを開始してください。</p>
+        </nav>
+
+        <main id="game-area">
+            <iframe id="game-container-iframe" src="" frameborder="0" allowfullscreen
+                sandbox="allow-scripts allow-same-origin allow-popups allow-forms"></iframe>
+
+            <div id="initial-message">
+                ゲームを選択してください
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
