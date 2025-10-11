@@ -16,11 +16,17 @@
     <div id="container">
         <nav id="game-list">
             <h2>ゲーム一覧</h2>
-            <button onclick="loadGame('janken')">じゃんけんぽん</button>
-            <button onclick="loadGame('pipeflow')">PipeFlow</button>
-            <button onclick="loadGame('game-puzzle')">パズルゲーム (Flutter)</button>
-            <button onclick="loadGame('game-rpg')">RPG (Flutter)</button>
-            <p class="guide">上のボタンをクリックしてゲームを開始してください。</p>
+            <div id="game-icons">
+                <img src="https://play-lh.googleusercontent.com/n0n3e0VXZGOg44fwhv4TI0TyeKdykBcD-0A14KsgD051GEDr5dFKVyAhGa8SdGF_sc8=w240-h480-rw"
+                    alt="じゃんけんぽん" title="じゃんけんぽん" onclick="loadGame('janken')" class="game-icon">
+                <img src="https://play-lh.googleusercontent.com/46ws4b7uOe6w4TC7bCJplZ9HTQAolPwi3q-_Uudp3lGR4Xnes699sZ5rPLukjFChDvmrx1R8KzYpyuVTnRx1oA=w240-h480-rw"
+                    alt="PipeFlow" title="PipeFlow" onclick="loadGame('pipeflow')" class="game-icon">
+                <img src="https://via.placeholder.com/240x480.png?text=Puzzle" alt="パズルゲーム (Flutter)"
+                    title="パズルゲーム (Flutter)" onclick="loadGame('game-puzzle')" class="game-icon">
+                <img src="https://via.placeholder.com/240x480.png?text=RPG" alt="RPG (Flutter)" title="RPG (Flutter)"
+                    onclick="loadGame('game-rpg')" class="game-icon">
+            </div>
+            <p class="guide">上のアイコンをクリックしてゲームを開始してください。</p>
         </nav>
 
         <main id="game-area">

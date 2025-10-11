@@ -43,26 +43,26 @@ header {
     padding-bottom: 5px;
 }
 
-#game-list button {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    background-color: #ffffff;
-    border: 1px solid #ced4da;
-    border-radius: 4px;
+#game-icons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.game-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 12px;
     cursor: pointer;
-    text-align: left;
-    transition: background-color 0.2s, transform 0.1s;
+    border: 3px solid #ced4da;
+    transition: border-color 0.3s, transform 0.3s;
+    object-fit: cover; /* 画像がコンテナに収まるように調整 */
 }
 
-#game-list button:hover {
-    background-color: #d0e8ff;
+.game-icon:hover {
     border-color: #007bff;
-}
-
-#game-list button:active {
-    transform: translateY(1px);
+    transform: scale(1.08);
 }
 
 .guide {
